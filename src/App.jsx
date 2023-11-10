@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import Carlist from './components/Carlist'
-import { AppBar, Typography } from '@mui/material'
+import { AppBar, Toolbar, Typography } from '@mui/material'
 
 function App() {
 
   return (
     <>
-      <AppBar position='sticky'>
-        <Typography variant='h6'>
-          Carshop
-        </Typography>
+      <AppBar position='static'>
+        <Toolbar>
+          <Typography variant='h6'>
+            CarShop
+          </Typography>
+        </Toolbar>
         <Carlist />
       </AppBar>
     </>
