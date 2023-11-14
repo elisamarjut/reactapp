@@ -53,17 +53,19 @@ export default function Carlist() {
 
     const deleteCar = (params) => {
         console.log("params: " + params.data._links.car.href)
-        fetch(params.data._links.car.href, { method: 'DELETE' })
-            .then(response => {
-                if (response.ok) {
-                    setMsg('Car was deleted succesfully!');
-                    setOpen(true);
-                    getCars();
-                } else {
-                    alert('Something went wrong!');
-                }
-            })
-            .catch(error => console.error(error));
+        if (window.confirm('Are you sure you want to delete?')) {
+            fetch(params.data._links.car.href, { method: 'DELETE' })
+                .then(response => {
+                    if (response.ok) {
+                        setMsg('Car was deleted succesfully!');
+                        setOpen(true);
+                        getCars();
+                    } else {
+                        alert('Something went wrong in deletion!');
+                    }
+                })
+                .catch(error => console.error(error));
+        }
     }
 
     const addCar = (car) => {
