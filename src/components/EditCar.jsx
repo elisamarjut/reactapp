@@ -32,8 +32,7 @@ export default function EditCar(props) {
 
     // return
     // editbutton
-    // dialog (edit form)
-    // dialog tulee näkyviin vain buttonista painamalla
+    // dialog (edit form) tulee näkyviin vain buttonista painamalla
     return (
         <>
             <Button
